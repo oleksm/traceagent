@@ -1,0 +1,16 @@
+debug: false
+classes:
+  - 
+    crex: .+
+    methods:
+    -  
+      mrex: .+
+      addLocalVariable: 
+        - long startTime
+      insertBefore: 
+        - startTime = System.nanoTime();
+      insertAfter:
+        - System.out.println(<<clazz>>.class.getName() + ".<<method>> Execution Duration (nano sec) "+ (System.nanoTime() - startTime) );
+#tbd      insertAt: 
+#        - 1: false, System.out.println("insertAt 1)"
+
